@@ -19,6 +19,35 @@
 
 ---
 
+## Current State
+
+**Status:** Frontend MVP (UI Complete, Backend Pending)
+
+This version delivers a fully functional frontend prototype demonstrating the complete user experience for both artists and developers. All interfaces are built; backend integration is the next phase.
+
+### What's Been Built
+
+**Landing Experience**
+- Manifesto and value proposition
+- Dual-path CTAs (Artist Portal / Developer API)
+- Animated hero with protocol branding
+
+**Artist Portal** (`/artist/*`)
+- **Upload** — Drag-drop interface for tracks, stems, and vocals with metadata forms
+- **Library** — Track listing with filtering by type and license status
+- **Permissions** — Granular AI permission toggles (training/generation) with tiered pricing
+- **Payouts** — Earnings dashboard with transaction history
+- **Usage Logs** — Real-time monitoring of API access to your audio
+
+**Developer Portal** (`/developer/*`)
+- **Browse** — Searchable catalog with filters (genre, mood, BPM, asset type, permissions)
+- **Licenses** — License management dashboard with permission indicators
+- **API Keys** — Key generation and management interface
+- **Usage Reports** — Request analytics and endpoint breakdown
+- **Documentation** — Interactive API docs with copy-to-clipboard code examples
+
+---
+
 ## Diagnosis of the Problem
 
 The AI music industry was built on extraction. Billions of songs, voices, and stems were scraped without consent, compensation, or control. Artists discovered their sound inside AI models they never approved. Developers built products on creativity they never paid for.
@@ -34,7 +63,7 @@ This creates three cascading problems:
 
 ## Guiding Policy
 
-**Play to our strengths: Be the infrastructure, not the product.**
+**Be the infrastructure, not the product.**
 
 SOVN is not a tool. It is not a marketplace. It is the protocol layer—the single point of consent verification between all artists and all AI systems.
 
@@ -49,13 +78,16 @@ SOVN is not a tool. It is not a marketplace. It is the protocol layer—the sing
 
 **Objective:** Establish SOVN as the canonical source of consent-verified music assets.
 
-**Actions:**
-1. Build a lossless upload system for tracks, stems, and vocals with robust metadata preservation
-2. Create a granular permissions framework: training rights, generation rights, derivative rights—each independently toggleable
-3. Implement transparent, automatic payouts when assets are licensed
-4. Partner with independent artists and small labels first—volume and legitimacy before major label negotiations
+**What this version does:**
+- Provides the complete upload flow for tracks, stems, and vocals
+- Implements granular permission controls (training/generation toggles)
+- Displays library management with license status tracking
+- Shows payout projections and usage monitoring interfaces
 
-**Success metric:** A critical mass of consent-verified audio that developers cannot ignore.
+**Next actions:**
+- Connect to backend storage (lossless audio preservation)
+- Implement real payment processing and automatic splits
+- Partner with independent artists and small labels for initial catalog
 
 ---
 
@@ -63,13 +95,16 @@ SOVN is not a tool. It is not a marketplace. It is the protocol layer—the sing
 
 **Objective:** Make SOVN the path of least resistance for ethical AI audio data.
 
-**Actions:**
-1. Ship a REST API with clear endpoints for browsing, filtering (genre, mood, BPM, asset type), and licensing
-2. Provide single-click licensing with transparent pricing and unambiguous terms
-3. Offer batch licensing for training datasets with full audit trails
-4. Position SOVN as legal insurance: "Built with SOVN" becomes the standard for defensible AI music products
+**What this version does:**
+- Provides browsable catalog UI with full filtering capabilities
+- Shows license management and API key interfaces
+- Includes interactive documentation with endpoint examples
+- Displays usage analytics and rate limit information
 
-**Success metric:** AI music companies adopt SOVN as their primary data source because the alternative—legal risk—is untenable.
+**Next actions:**
+- Build REST API endpoints (`/v1/audio/search`, `/v1/audio/download`, `/v1/licenses`)
+- Implement authentication and rate limiting
+- Create batch licensing for training datasets with audit trails
 
 ---
 
@@ -85,16 +120,24 @@ Artists retain sovereignty. Developers build cleanly. The industry has its stand
 
 ## Tech Stack
 
-- React 19 + Vite
+- React 19 + Vite 7
 - Tailwind CSS 4
 - Framer Motion
-- React Router
+- React Router 7
+- Lucide Icons
 
 ## Development
 
 ```bash
 npm install
 npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+npm run preview
 ```
 
 ## License
